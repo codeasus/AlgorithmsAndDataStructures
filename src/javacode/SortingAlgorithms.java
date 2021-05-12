@@ -35,7 +35,7 @@ public class SortingAlgorithms {
         for(int index = 0; index < inputArray.length; index++) {
             for(int index_sec = index + 1; index_sec < inputArray.length; index_sec++) {
                 if(inputArray[index] > inputArray[index_sec]) {
-                    int              temp = inputArray[index];
+                    int          temp     = inputArray[index];
                     inputArray[index]     = inputArray[index_sec];
                     inputArray[index_sec] = temp;
                 }
