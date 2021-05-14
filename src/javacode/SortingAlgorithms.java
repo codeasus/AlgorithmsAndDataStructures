@@ -44,7 +44,7 @@ public class SortingAlgorithms {
     }
 
     public static void selectionSortRecursive(int elementToLoop, int[] inputArray) {
-        if(elementToLoop == 1) {
+        if(elementToLoop == 0) {
             return;
         }
         for(int index = elementToLoop - 1; index >= 0; index--) {
