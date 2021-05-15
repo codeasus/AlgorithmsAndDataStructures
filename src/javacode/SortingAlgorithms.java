@@ -1,5 +1,6 @@
 package javacode;
 
+
 public class SortingAlgorithms {
     
     private SortingAlgorithms(){}
@@ -55,5 +56,37 @@ public class SortingAlgorithms {
             }
         }
         selectionSortRecursive(elementToLoop - 1, inputArray);
+    }
+
+    public static void quickSort(int[] array, int leftPointer, int rightPointer) {
+        if(leftPointer < rightPointer) {
+            int pivot = quickSort_partition(array, leftPointer, rightPointer);
+
+            quickSort(array, leftPointer, pivot - 1);
+            quickSort(array, pivot + 1, rightPointer);
+        }
+    }
+
+    //  [9, 4, 12, 34, 12, 5, 102, 130, 1]
+    // Iterations :: FOR_LOOP, FUNCTION  
+    private static int quickSort_partition(int[] array, int leftPointer, int rightPointer) {
+        int pivotIndex = (int) (array.length / 2);
+        int elementPointer = (leftPointer - 1);
+        
+        for(int index = leftPointer; index < rightPointer; index++) {
+            if(array[index] <= array[pivotIndex]) {
+                elementPointer++;
+
+                int tempValue          = array[elementPointer];
+                array[elementPointer]   = array[index];
+                array[index]            = tempValue;
+            }
+        }
+
+        int temp                  = array[elementPointer + 1];
+        array[elementPointer + 1] = array[rightPointer];
+        array[rightPointer]       = temp;
+
+        return (elementPointer + 1);
     }
 }
