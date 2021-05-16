@@ -67,10 +67,8 @@ public class SortingAlgorithms {
         }
     }
 
-    //  [9, 4, 12, 34, 12, 5, 102, 130, 1]
-    // Iterations :: FOR_LOOP, FUNCTION  
     private static int quickSort_partition(int[] array, int leftPointer, int rightPointer) {
-        int pivotIndex = (int) (array.length / 2);
+        int pivotIndex     =  rightPointer;
         int elementPointer = (leftPointer - 1);
         
         for(int index = leftPointer; index < rightPointer; index++) {
@@ -78,8 +76,8 @@ public class SortingAlgorithms {
                 elementPointer++;
 
                 int tempValue          = array[elementPointer];
-                array[elementPointer]   = array[index];
-                array[index]            = tempValue;
+                array[elementPointer]  = array[index];
+                array[index]           = tempValue;
             }
         }
 
@@ -88,5 +86,30 @@ public class SortingAlgorithms {
         array[rightPointer]       = temp;
 
         return (elementPointer + 1);
+    }
+
+    //  [9, 4, 12, 304, 12, 5, 102, 130, 1]
+    //  [0]  ==> [9, 4, 5, 1] : [12, 12, 304, 102, 130]
+    //  [1L] ==> [9, 4, 5, 1] > [4, 1] : [5, 9] > [1] : [4] : [5] : [9]
+    //  [1R] ==> [12, 12, 304, 102, 130] > [12, 12, 102, 130], [304] > [12, 12, 102] : [130] > [] : [12, 12, 102]
+
+    public static void quickSort_basic(int[] array) {
+        
+        int pivot         = (int) (array.length / 2);
+        int leftPointer   = 0;
+        int rightPointer  = array.length - 1;
+        
+        int tracer        = 0;
+        
+        for(int index = 0; index < array.length; index++) {
+            if(array[tracer] < array[pivot]) {
+                tracer++;
+                
+                
+                
+            }
+        }
+        
+
     }
 }
