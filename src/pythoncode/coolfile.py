@@ -1,6 +1,6 @@
 import os
 
-def displayPath(current_path, intend=' '):
+def displayPath(current_path, intend=u'\xB7'):
     if os.path.isfile(current_path): 
         print(current_path)
 
