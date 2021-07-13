@@ -1,6 +1,5 @@
 package javacode;
 
-
 public class SortingAlgorithms {
     
     private SortingAlgorithms(){}
@@ -68,7 +67,7 @@ public class SortingAlgorithms {
     }
 
     private static int quickSort_partition(int[] array, int leftPointer, int rightPointer) {
-        int pivotIndex     =  rightPointer;
+        int pivotIndex     = rightPointer;
         int elementPointer = (leftPointer - 1);
         
         for(int index = leftPointer; index < rightPointer; index++) {
